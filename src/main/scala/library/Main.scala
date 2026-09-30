@@ -25,6 +25,7 @@ object Main {
     comic.borrow()
     println(comic.description())*/
 //tests users
+/*  
     val dune = new Book("Dune", "Frank Herbert", 1965, "Science fiction")
     val asterix = new Comic("Astérix le Gaulois", "Goscinny & Uderzo", 1961, 1)
 
@@ -41,6 +42,24 @@ object Main {
     println("Bob returns Dune: " + bob.returnDocument(dune))
     println("Alice returns Dune: " + alice.returnDocument(dune))
 
-    alice.listBorrowedDocuments()
+    alice.listBorrowedDocuments() */
+// tests class library
+       val library = new Library()
+
+    val dune = new Book("Dune", "Frank Herbert", 1965, "Science fiction")
+    val natgeo = new Magazine("National Geographic", "NatGeo Society", 2024, 312)
+
+    library.addDocument(dune)
+    library.addDocument(natgeo)
+
+    val alice = new User("Alice")
+    library.addUser(alice)
+
+    library.listAvailableDocuments()
+    alice.borrowDocument(dune)
+    library.listAvailableDocuments()
+
+    println("Number of documents: " + library.getDocuments.size)
+    println("Number of users: " + library.getUsers.size)
   }
 }
