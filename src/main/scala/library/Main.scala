@@ -24,5 +24,23 @@ object Main {
     println(comic.description())
     comic.borrow()
     println(comic.description())*/
+//tests users
+    val dune = new Book("Dune", "Frank Herbert", 1965, "Science fiction")
+    val asterix = new Comic("Astérix le Gaulois", "Goscinny & Uderzo", 1961, 1)
+
+    val alice = new User("Alice")
+    val bob = new User("Bob")
+
+    println("Alice borrows Dune: " + alice.borrowDocument(dune))
+    println("Bob borrows Dune: " + bob.borrowDocument(dune))
+    println("Bob borrows Asterix: " + bob.borrowDocument(asterix))
+
+    alice.listBorrowedDocuments()
+    bob.listBorrowedDocuments()
+
+    println("Bob returns Dune: " + bob.returnDocument(dune))
+    println("Alice returns Dune: " + alice.returnDocument(dune))
+
+    alice.listBorrowedDocuments()
   }
 }
