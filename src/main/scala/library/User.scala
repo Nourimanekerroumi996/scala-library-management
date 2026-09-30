@@ -1,8 +1,6 @@
 package library
 
-package library
-
-// A library member who can borrow and return documents. 
+/** A library member who can borrow and return documents. */
 class User(val name: String) {
 
   private var borrowedDocs: List[Document] = List()
